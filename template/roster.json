@@ -1,0 +1,17 @@
+{
+  "_about": "Which model fills each role. The playbook, the protocol and the skills name roles, never models: swapping a reviewer is a change to this file only. Ids and efforts must match what the CLI's own log records for a run.",
+  "models": {
+    "claude": { "name": "Claude Opus 5.5", "cli": "claude", "id": "claude-opus-5-5", "effort": "high" },
+    "sol": { "name": "GPT-6.1 Sol", "cli": "codex", "id": "gpt-6.1-sol", "effort": "high" },
+    "astra": { "name": "GPT-6 Astra", "cli": "codex", "id": "gpt-6-astra", "effort": "xhigh" },
+    "argon": { "name": "Gemini 4 Argon", "cli": "agy", "id": "gemini-4-argon-high", "effort": "high" }
+  },
+  "roles": {
+    "builder": "claude",
+    "reviewer_a": "astra",
+    "reviewer_b": "sol",
+    "debater": "astra",
+    "second_debater": "sol",
+    "researcher": "sol"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "shipwright",
+  "private": true,
+  "type": "module",
+  "description": "A playbook for building products with coding agents: one template every product starts from, seven skills that run each stage, and bounded cross-model reviews.",
+  "license": "MIT",
+  "author": "Hitesh Dundi",
+  "homepage": "https://github.com/hiteshdundi01/shipwright#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hiteshdundi01/shipwright.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hiteshdundi01/shipwright/issues"
+  },
+  "keywords": ["coding-agents", "claude-code", "codex", "agent-skills", "code-review", "playbook", "llm"],
+  "scripts": {
+    "check": "node scripts/check.mjs && node --test \"scripts/*.test.mjs\"",
+    "skills": "node scripts/install.mjs",
+    "new-product": "node scripts/new-product.mjs",
+    "ask": "node scripts/ask.mjs",
+    "measure": "node scripts/measure.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

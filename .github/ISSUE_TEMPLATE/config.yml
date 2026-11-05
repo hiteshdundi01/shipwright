@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Security issue
+    url: https://github.com/hiteshdundi01/shipwright/security/advisories/new
+    about: Report it privately, never in a public issue (see SECURITY.md).

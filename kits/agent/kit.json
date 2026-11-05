@@ -1,0 +1,12 @@
+{
+  "_about": "What new-product --kit agent puts in a product. files maps a kit file to its path in the product; a product that already has one of those paths keeps its own. standards is linked from docs/CODE_STANDARDS.md, so its HARD rules can block a review. route is the row added to AGENTS.md's routing table, after the row that starts with routeAfter; routeSection is appended instead when there is no such row.",
+  "files": {
+    "AGENT_STANDARDS.md": "docs/AGENT_STANDARDS.md",
+    "TECH_STACK.md": "docs/TECH_STACK.md"
+  },
+  "standards": "docs/AGENT_STANDARDS.md",
+  "standardsSection": "## The agent kit\n\nThe rules in `docs/AGENT_STANDARDS.md` are part of these standards. A rule marked HARD there can block a review, like a HARD rule here. The kit's checks, briefs and worked example are in `~/.master/kits/agent/`.\n",
+  "routeAfter": "| Writing code |",
+  "route": "| Building the agent: its parts, tools, instructions, runs and tests | `docs/AGENT_STANDARDS.md` |",
+  "routeSection": "## The agent kit\n\nWhen building the agent (its parts, tools, instructions, runs and tests), read `docs/AGENT_STANDARDS.md`.\n"
+}

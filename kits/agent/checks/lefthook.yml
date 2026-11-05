@@ -1,0 +1,39 @@
+# From master's agent kit. Copy to the repo root as lefthook.yml, and match the
+# folder names to the product's parts. It formats the staged files, then runs
+# the checks for the part that changed, a change to that part's configuration
+# included. `npm install` installs it through the "prepare" script.
+glob_matcher: doublestar
+
+pre-commit:
+  parallel: true
+  jobs:
+    - name: python
+      group:
+        piped: true
+        jobs:
+          - run: uv run ruff format {staged_files}
+            glob: ["**/*.py"]
+            stage_fixed: true
+          - run: npm run check:python
+            glob:
+              - "{backend,agent,data}/**"
+              - "*.py"
+              - "pyproject.toml"
+              - "uv.lock"
+              - "lefthook.yml"
+
+    - name: typescript
+      group:
+        piped: true
+        jobs:
+          - run: npx prettier --write -u {staged_files}
+            glob: ["{app,e2e,scripts}/**", "*.config.*", "package.json", "tsconfig.json"]
+            stage_fixed: true
+          - run: npm run check:ts
+            glob:
+              - "{app,e2e,scripts}/**"
+              - "*.config.*"
+              - "package.json"
+              - "package-lock.json"
+              - "tsconfig.json"
+              - "lefthook.yml"

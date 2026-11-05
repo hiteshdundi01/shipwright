@@ -1,0 +1,32 @@
+# {{PRODUCT}}'s review settings (docs/REVIEW_PROTOCOL.md). Which model fills each
+# role lives in roster.json, never here.
+
+owner: "<the owner's name>" # decides what a review can't: disputes, product calls, limits accepted
+
+# mvp until real users, other people's data, or an environment others can reach;
+# then production (docs/REVIEW_PROTOCOL.md §8).
+tier: mvp
+
+# Changes here get two reviewers. Each category lists globs, or says
+# not_applicable with a reason. Paths are the default: a change elsewhere that
+# alters this behavior counts too, and so do its tests, fixtures and thresholds.
+high_stakes:
+  sign_in_and_permissions: []
+  private_and_personal_data: []
+  deletion_and_retention: []
+  money: []
+  safety_policy: []
+  secrets: []
+  schema_migrations: []
+  release_and_evaluation_gates: []
+  review_tooling: []
+
+# Never sent to a reviewer, in any form. Changes to them appear by path only.
+exclude_paths:
+  - ".env"
+  - ".env.*"
+  - "**/*.pem"
+  - "**/*.key"
+
+# Approvals no model review stands in for, such as a domain expert's sign-off.
+human_approvals: []
